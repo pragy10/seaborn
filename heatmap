@@ -1,0 +1,10 @@
+from sklearn.datasets import fetch_california_housing
+
+housing=fetch_california_housing()
+house = pd.DataFrame(housing.data,columns=housing.feature_names)
+house['PRICE']=housing.target
+print(house)
+
+correlation=house.corr
+plt.figure(figsize=(9,9))
+sns.heatmap(correlation,cbar=True,annot=True,annot_kws={'size':9},cmap='Blues',square=True,fmt='.1f')
