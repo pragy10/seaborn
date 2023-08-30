@@ -1,0 +1,4 @@
+import seaborn as sns
+import matplotlib as plt
+titanic=sns.load_dataset('titanic')
+sns.relplot(x='fare', y='age',data=titanic,col='class',hue='sex')
